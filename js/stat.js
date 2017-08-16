@@ -1,3 +1,4 @@
+'use strict';
 window.renderStatistics = function (ctx, names, times) {
 
   ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
@@ -14,13 +15,11 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillText('Список результатов:', 120, 56);
 
   var max = -1;
-  var maxIndex = -1;
 
   for (var i = 0; i < times.length; i++) {
     var time = times[i];
     if (time > max) {
       max = time;
-      maxIndex = i;
     }
   }
 
@@ -32,7 +31,7 @@ window.renderStatistics = function (ctx, names, times) {
   var initialX = 140;
   var initialY = 250;
 
-  for (var i = 0; i < times.length; i++) {
+  for (i = 0; i < times.length; i++) {
     if (names[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
